@@ -4,7 +4,7 @@ const rootPath = path.resolve(__dirname, '../');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
 	entry: {
-		vendor: ['react'],
+		vendor: ['react','react-dom','react-redux','antd','redux','react-router-dom'],
 		app: path.join(rootPath, './src/main.js'),
 	},
 	output: {
