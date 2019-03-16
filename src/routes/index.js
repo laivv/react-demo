@@ -1,16 +1,15 @@
-import React from 'react';
-import Index from '../components/Index';
-import Blog from '../components/Blog';
-import { Route, Switch } from 'react-router-dom';
+import Home from '../components/home';
+import Blog from '../components/blog';
 
-export default class Routes extends React.Component {
-  render() {
-    return (
-      <Switch>
-        <Route path="/" component={Index} exact />
-        <Route path="/blog" component={Blog} />
-      </Switch>
-    )
-  }
-}
-
+const routes = [
+  {
+    path: '/',
+    component: Home,
+    exact: true
+  },
+  {
+    path: '/blog',
+    component: Blog
+  },
+]
+export default routes;
