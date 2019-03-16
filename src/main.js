@@ -16,7 +16,7 @@ const store = createStore(reducers)
 
 ReactDOM.render(
   <Provider store={store}>
-    <HashRouter>
+    <BrowserRouter>
       <div>
         {
           routes.map((route, index) => (
@@ -24,7 +24,7 @@ ReactDOM.render(
           ))
         }
       </div>
-    </HashRouter>
+    </BrowserRouter>
   </Provider>,
   document.getElementById("app")
 )
