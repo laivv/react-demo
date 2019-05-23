@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'antd';
 import { withRouter } from 'react-router-dom';
-
+import { Nav } from '../nav/';
 class Blog extends React.Component {
 
   componentDidMount(){
@@ -10,8 +10,10 @@ class Blog extends React.Component {
   }
   render() {
     return (
+
       <div>
-        <Button>我是blog</Button>
+        <Nav></Nav>
+        文章列表
       </div>
     )
   }

@@ -6,7 +6,6 @@ import { BrowserRouter, Route, Switch, HashRouter } from 'react-router-dom';
 import reducers from './reducers';
 import routes from './routes';
 
-
 const state = {
   login: false,
   jwt: ''
@@ -16,15 +15,17 @@ const store = createStore(reducers)
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
-      <div>
-        {
-          routes.map((route, index) => (
-            <Route key={index + '-route'} path={route.path} component={route.component} exact={route.exact || false}></Route>
-          ))
-        }
-      </div>
-    </BrowserRouter>
+    <div>
+      <BrowserRouter>
+          <div>
+          {
+            routes.map((route, index) => (
+              <Route key={index + '-route'} path={route.path} component={route.component} exact={route.exact || false}></Route>
+            ))
+          }
+          </div>
+      </BrowserRouter>
+    </div>
   </Provider>,
   document.getElementById("app")
 )

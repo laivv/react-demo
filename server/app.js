@@ -10,6 +10,7 @@ import routes from '../src/routes';
 import koaStatic from 'koa-static';
 import fs from 'fs';
 import path from 'path';
+import { Nav } from '../src/components/nav';
 
 
 const getMatched = (path) => routes.filter(route => route.path === path);
@@ -32,17 +33,19 @@ app.use(async (ctx, next) => {
     return next();
   }
   const content = renderToString(
-    <StaticRouter location={path}>
-      <div>
-        {
-          routes.map((route, index) => (
-            <Route key={index + '-route'} path={route.path} component={route.component} exact={route.exact || false}></Route>
-          ))
-        }
-      </div>
-    </StaticRouter>
+    <div>
+      <StaticRouter location={path}>
+        <div>
+          {
+            routes.map((route, index) => (
+              <Route key={index + '-route'} path={route.path} component={route.component} exact={route.exact || false}></Route>
+            ))
+          }
+        </div>
+      </StaticRouter>
+    </div>
   );
-  ctx.body =  html.replace('__SSR_TITLE__',route.title).replace('__SSR_CONTENT__', content);
+  ctx.body = html.replace('__SSR_TITLE__', route.title).replace('__SSR_CONTENT__', content);
 });
 
 app.use(koaStatic(path.resolve('../dist')));

@@ -1,5 +1,6 @@
 import Home from '../components/home';
 import Blog from '../components/blog';
+import Message from '../components/message';
 
 const routes = [
   {
@@ -9,8 +10,13 @@ const routes = [
     exact: true
   },
   {
-    path: '/blog',
-    title:'博客',
+    path: '/articles',
+    title:'归档',
+    component: Blog
+  },
+  {
+    path: '/message',
+    title:'留言',
     component: Blog
   },
 ]
