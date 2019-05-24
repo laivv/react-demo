@@ -5,6 +5,8 @@ import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter, Route, Switch, HashRouter } from 'react-router-dom';
 import reducers from './reducers';
 import routes from './routes';
+import Navbar from './components/navbar';
+import Footer from './components/footer';
 
 const state = {
   login: false,
@@ -13,20 +15,22 @@ const state = {
 
 const store = createStore(reducers)
 
-ReactDOM.render(
+const render = ReactDOM.render(
   <Provider store={store}>
-    <div>
-      <BrowserRouter>
-          <div>
-          {
-            routes.map((route, index) => (
-              <Route key={index + '-route'} path={route.path} component={route.component} exact={route.exact || false}></Route>
-            ))
-          }
-          </div>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <div>
+        <Navbar />
+        {
+          routes.map((route, index) => (
+            <Route key={index + '-route'} path={route.path} component={route.component} exact></Route>
+          ))
+        }
+        <Footer />
+      </div>
+    </BrowserRouter>
   </Provider>,
   document.getElementById("app")
 )
+
+store.subscribe(render);
 

@@ -10,7 +10,8 @@ import routes from '../src/routes';
 import koaStatic from 'koa-static';
 import fs from 'fs';
 import path from 'path';
-import { Nav } from '../src/components/nav';
+import Navbar from '../src/components/navbar';
+import Footer from '../src/components/footer';
 
 
 const getMatched = (path) => routes.filter(route => route.path === path);
@@ -36,11 +37,13 @@ app.use(async (ctx, next) => {
     <div>
       <StaticRouter location={path}>
         <div>
+          <Navbar />
           {
             routes.map((route, index) => (
-              <Route key={index + '-route'} path={route.path} component={route.component} exact={route.exact || false}></Route>
+              <Route key={index + '-route'} path={route.path} component={route.component} exact></Route>
             ))
           }
+          <Footer />
         </div>
       </StaticRouter>
     </div>

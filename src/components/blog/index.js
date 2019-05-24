@@ -1,19 +1,17 @@
 import React from 'react';
-import { Button } from 'antd';
+import { Button ,Pagination,Empty} from 'antd';
 import { withRouter } from 'react-router-dom';
-import { Nav } from '../nav/';
+
 class Blog extends React.Component {
 
   componentDidMount(){
-    document.title = '博客'
-    console.log('博客组件已挂载')
+    document.title = '归档'
   }
   render() {
     return (
-
       <div>
-        <Nav></Nav>
-        文章列表
+        <Empty description="博主太懒啦，什么都没写~"/>
+        <Pagination defaultCurrent={1} total={50} />
       </div>
     )
   }

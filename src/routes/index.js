@@ -7,7 +7,6 @@ const routes = [
     path: '/',
     title:'首页',
     component: Home,
-    exact: true
   },
   {
     path: '/articles',
@@ -17,7 +16,7 @@ const routes = [
   {
     path: '/message',
     title:'留言',
-    component: Blog
+    component: Message
   },
 ]
 export default routes;

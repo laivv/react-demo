@@ -1,19 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Input, Menu } from 'antd';
+import { Divider} from 'antd';
 // import './style.css'
 import 'antd/dist/antd.css';
+import './style.css';
 
 
 
-export default class Home extends React.Component {
+export default class Footer extends React.Component {
   componentDidMount(){
-    document.title = '首页';
   }
   render() {
     return (
-      <div>
-        这是首页组件
+      <div className="footer">
+        <Divider>©2019 蜀ICP备16027289号-1 </Divider>
       </div>
     )
   }

@@ -5,7 +5,7 @@ import { Button, Input, Menu } from 'antd';
 import 'antd/dist/antd.css';
 
 
-export default class Nav extends React.Component {
+export default class Navbar extends React.Component {
 
   render() {
     return (
@@ -18,7 +18,7 @@ export default class Nav extends React.Component {
             <Link to="/articles">归档</Link>
           </Menu.Item>
           <Menu.Item>
-            <Link to="/message"></Link>
+            <Link to="/message">留言</Link>
           </Menu.Item>
           <Input.Search
               placeholder="搜索内容"
@@ -26,7 +26,9 @@ export default class Nav extends React.Component {
               style={{ width: 200 }}
             />
         </Menu>
-
+        <div>
+          {/* {this.props.children} */}
+        </div>
       </div>
     )
   }
