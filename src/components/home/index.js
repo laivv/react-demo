@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Input, Menu } from 'antd';
+import { Button } from 'antd';
 // import './style.css'
 import 'antd/dist/antd.css';
 
@@ -13,7 +13,9 @@ export default class Home extends React.Component {
   render() {
     return (
       <div>
-        这是首页组件
+        <Button>
+          <Link to="/article">查看详情</Link>
+        </Button>
       </div>
     )
   }

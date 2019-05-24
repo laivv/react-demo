@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Input, Menu, Comment, Avatar, Tooltip ,Icon} from 'antd';
+import { Button, Input, Menu, Comment, Avatar, Tooltip, Icon } from 'antd';
 // import './style.css'
 import 'antd/dist/antd.css';
 
@@ -9,10 +9,10 @@ export default class Message extends React.Component {
   componentDidMount() {
     document.title = '留言';
   }
-  like(){
+  like() {
 
   }
-  dislike(){
+  dislike() {
 
   }
   render() {
@@ -21,7 +21,7 @@ export default class Message extends React.Component {
       <span>
         <Tooltip title="Like">
           <Icon
-            type="like"
+            type="顶"
             theme={action === 'liked' ? 'filled' : 'outlined'}
             onClick={this.like}
           />
@@ -31,7 +31,7 @@ export default class Message extends React.Component {
       <span>
         <Tooltip title="Dislike">
           <Icon
-            type="dislike"
+            type="踩"
             theme={action === 'disliked' ? 'filled' : 'outlined'}
             onClick={this.dislike}
           />
@@ -54,9 +54,7 @@ export default class Message extends React.Component {
           }
           content={
             <p>
-              We supply a series of design principles, practical patterns and high quality design
-              resources (Sketch and Axure), to help people create their product prototypes beautifully
-              and efficiently.
+              测试测试测试测试测试测试测试测试测试测试测试测试
           </p>
           }
           datetime={
