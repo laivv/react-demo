@@ -22,44 +22,36 @@ class CommentForm extends React.Component {
     const { getFieldDecorator } = this.props.form;
     return (
       <Form {...formItemLayout} >
-        <Form.Item label="Email">
+        <Form.Item label="邮箱">
           {getFieldDecorator('email', {
             rules: [
               {
                 type: 'email',
-                message: 'The input is not valid E-mail!',
+                message: '无效的邮箱',
               },
               {
                 required: true,
-                message: 'Please input your E-mail!',
+                message: '请输入你的邮箱',
               },
             ],
           })(<Input />)}
         </Form.Item>
-        <Form.Item label="Name">
+        <Form.Item label="称呼">
           {getFieldDecorator('name', {
             rules: [
               {
-                type: 'string',
-                message: 'The input is not valid E-mail!',
-              },
-              {
                 required: true,
-                message: 'Please input your E-mail!',
+                message: '请输入你的称呼',
               },
             ],
           })(<Input />)}
         </Form.Item>
-        <Form.Item label="content">
+        <Form.Item label="内容">
           {getFieldDecorator('content', {
             rules: [
               {
-                type: 'string',
-                message: 'The input is not valid E-mail!',
-              },
-              {
                 required: true,
-                message: 'Please input your E-mail!',
+                message: '请输入内容',
               },
             ],
           })(<Input />)}
