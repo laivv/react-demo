@@ -12,11 +12,9 @@ export default class Home extends React.Component {
   }
   render() {
     return (
-      <div>
         <Button>
           <Link to="/article">查看详情</Link>
         </Button>
-      </div>
     )
   }
 }
