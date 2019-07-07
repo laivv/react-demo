@@ -31,7 +31,7 @@ module.exports = {
 	plugins: [
 		new htmlWebpackPlugin({
 			title: 'react',
-			chunks: ['vendor','app'],
+			chunks: ['vendor', 'app'],
 			filename: 'index.html',
 			template: path.join(rootPath, './index.html'),
 			inject: 'body',

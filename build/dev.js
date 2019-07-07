@@ -4,7 +4,7 @@ const rootPath = path.resolve(__dirname, '../');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
 	entry: {
-		vendor: ['react','react-dom','react-redux','antd','redux','react-router-dom'],
+		vendor: ['react', 'react-dom', 'react-redux', 'antd', 'redux', 'react-router-dom'],
 		app: path.join(rootPath, './src/main.js'),
 	},
 	output: {
@@ -40,7 +40,7 @@ module.exports = {
 		new webpack.HotModuleReplacementPlugin(),
 		new htmlWebpackPlugin({
 			title: 'react',
-			chunks: ['vendor','app'],
+			chunks: ['vendor', 'app'],
 			filename: 'index.html',
 			template: path.join(rootPath, './index.html'),
 			inject: 'body',
