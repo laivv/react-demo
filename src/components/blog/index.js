@@ -9,10 +9,10 @@ class Blog extends React.Component {
   }
   render() {
     return (
-      <div>
+      <React.Fragment>
         <Empty description="博主太懒啦，什么都没写~"/>
         <Pagination defaultCurrent={1} total={50} />
-      </div>
+      </React.Fragment>
     )
   }
 }

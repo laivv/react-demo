@@ -12,9 +12,9 @@ export default class Footer extends React.Component {
   }
   render() {
     return (
-      <div className="footer">
+      <React.Fragment>
         <Divider>©2019 蜀ICP备16027289号-1 </Divider>
-      </div>
+      </React.Fragment>
     )
   }
 }

@@ -9,7 +9,7 @@ export default class Navbar extends React.Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         <Menu mode="horizontal" className="flex">
           <Menu.Item>
           <Link to="/">首页</Link>
@@ -29,7 +29,7 @@ export default class Navbar extends React.Component {
         <div>
           {/* {this.props.children} */}
         </div>
-      </div>
+      </React.Fragment>
     )
   }
 }

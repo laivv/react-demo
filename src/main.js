@@ -16,9 +16,10 @@ const state = {
 const store = createStore(reducers)
 
 const render = ReactDOM.render(
+  <div style={{padding:"0 10px"}}>
   <Provider store={store}>
     <BrowserRouter>
-      <div>
+      <React.Fragment>
         <Navbar />
         {
           routes.map((route, index) => (
@@ -26,9 +27,10 @@ const render = ReactDOM.render(
           ))
         }
         <Footer />
-      </div>
+      </React.Fragment>
     </BrowserRouter>
-  </Provider>,
+  </Provider>
+  </div>,
   document.getElementById("app")
 )
 
