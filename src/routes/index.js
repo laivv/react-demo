@@ -1,7 +1,7 @@
-import Home from '../components/home';
-import Blog from '../components/blog';
-import Message from '../components/message';
-import Detail from '../components/detail';
+import Home from '../components/home'
+import Blog from '../components/blog'
+import Message from '../components/message'
+import Detail from '../components/detail'
 const routes = [
   {
     path: '/',
@@ -24,4 +24,4 @@ const routes = [
     component: Message
   },
 ]
-export default routes;
+export default routes
