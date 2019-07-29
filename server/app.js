@@ -15,7 +15,24 @@ import Footer from '../src/components/footer';
 
 
 const getMatched = (path) => routes.filter(route => route.path === path);
-const html = fs.readFileSync('../index.html', { encoding: 'utf-8' });
+// const html = fs.readFileSync('../index.html', { encoding: 'utf-8' });
+const html = `
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>__SSR_TITLE__</title>
+</head>
+<body>
+  <div id="app">__SSR_CONTENT__</div>
+  <script src="/vendor.min.js"></script>
+  <script src="/app.min.js"></script>
+  <noscript>启用浏览器的JavaScript来浏览本站</noscript>
+</body>
+</html>
+`
 
 const matchRoute = path => {
   for (let [key, item] of routes.entries()) {

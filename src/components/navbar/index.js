@@ -9,7 +9,6 @@ export default class Navbar extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
         <Menu mode="horizontal" className="flex">
           <Menu.Item>
           <Link to="/">首页</Link>
@@ -20,16 +19,7 @@ export default class Navbar extends React.Component {
           <Menu.Item>
             <Link to="/message">留言</Link>
           </Menu.Item>
-          <Input.Search
-              placeholder="搜索内容"
-              onSearch={value => console.log(value)}
-              style={{ width: 200 }}
-            />
         </Menu>
-        <div>
-          {/* {this.props.children} */}
-        </div>
-      </React.Fragment>
     )
   }
 }

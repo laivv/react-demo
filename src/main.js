@@ -18,23 +18,19 @@ const sagaMiddleware = createSagaMiddleware()
 const store = createStore(reducers, applyMiddleware(sagaMiddleware))
 sagaMiddleware.run(mysaga)
 
-const render = ReactDOM.render(
-  <div style={{ padding: "0 10px" }}>
-    <Provider store={store}>
-      <BrowserRouter>
-        <React.Fragment>
-          <Navbar />
-          {
-            routes.map((route, index) => (
-              <Route key={index + '-route'} path={route.path} component={route.component} exact></Route>
-            ))
-          }
-          <Footer />
-        </React.Fragment>
-      </BrowserRouter>
-    </Provider>
-  </div>,
+ReactDOM.render(
+  <Provider store={store}>
+    <BrowserRouter>
+      <React.Fragment>
+        <Navbar />
+        {
+          routes.map((route, index) => (
+            <Route key={index + '-route'} path={route.path} component={route.component} exact></Route>
+          ))
+        }
+        <Footer />
+      </React.Fragment>
+    </BrowserRouter>
+  </Provider>,
   document.getElementById("app")
 )
-store.subscribe(render)
-
