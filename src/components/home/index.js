@@ -1,20 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button, List, Avatar, Icon } from 'antd';
-import {connect} from 'react-redux'
+import { connect } from 'react-redux';
 // import './style.css'
 import 'antd/dist/antd.css';
 
 
 
- class Home extends React.Component {
+class Home extends React.Component {
   componentDidMount() {
     document.title = '首页';
   }
-  onChange(page) {
-    const { dispatch } = this.props.dispatch
-    dispatch({ type: 'ARTICLES_FETCH_REQUESTED', payload: { page } })
-  }
+
   render() {
     const listData = [];
     for (let i = 0; i < 23; i++) {
@@ -41,7 +38,9 @@ import 'antd/dist/antd.css';
           itemLayout="vertical"
           size="large"
           pagination={{
-            onChange: this.onChange,
+            onChange: (page) =>{
+              this.props.onChange(page)
+            },
             pageSize: 3,
           }}
           dataSource={listData}
@@ -72,4 +71,11 @@ import 'antd/dist/antd.css';
     )
   }
 }
-export default connect()(Home)
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onChange(page) {
+      dispatch({ type: 'ARTICLES_FETCH_REQUESTED', payload: { page } })
+    }
+  }
+}
+export default connect(mapDispatchToProps)(Home)
