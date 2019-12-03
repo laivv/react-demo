@@ -71,6 +71,11 @@ class Home extends React.Component {
     )
   }
 }
+const mapStateToProps =  (state) =>{
+  return {
+     
+  }
+}
 const mapDispatchToProps = (dispatch) => {
   return {
     onChange(page) {
@@ -78,4 +83,4 @@ const mapDispatchToProps = (dispatch) => {
     }
   }
 }
-export default connect(mapDispatchToProps)(Home)
+export default connect(mapStateToProps,mapDispatchToProps)(Home)
