@@ -1,14 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button, List, Avatar, Icon } from 'antd';
+import {connect} from 'react-redux'
 // import './style.css'
 import 'antd/dist/antd.css';
 
 
 
-export default class Home extends React.Component {
+ class Home extends React.Component {
   componentDidMount() {
     document.title = '首页';
+  }
+  onChange(page) {
+    const { dispatch } = this.props.dispatch
+    dispatch({ type: 'ARTICLES_FETCH_REQUESTED', payload: { page } })
   }
   render() {
     const listData = [];
@@ -22,6 +27,7 @@ export default class Home extends React.Component {
           '文章内容',
       });
     }
+
     const IconText = ({ type, text }) => (
       <span>
         <Icon type={type} style={{ marginRight: 8 }} />
@@ -35,9 +41,7 @@ export default class Home extends React.Component {
           itemLayout="vertical"
           size="large"
           pagination={{
-            onChange: page => {
-              console.log(page);
-            },
+            onChange: this.onChange,
             pageSize: 3,
           }}
           dataSource={listData}
@@ -68,3 +72,4 @@ export default class Home extends React.Component {
     )
   }
 }
+export default connect()(Home)
